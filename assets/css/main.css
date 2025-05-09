@@ -2751,7 +2751,7 @@ input, select, textarea {
 		max-height: 320px;
 		overflow: hidden;
 		transition: max-height 0.3s ease-out;
-		transform-origin: top;
+		cursor: pointer; /* Add cursor pointer to indicate clickable area */
 	}
 
 		.features article .inner > :last-child {

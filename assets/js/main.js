@@ -178,7 +178,16 @@
 			// Re-check on window resize
 			$(window).on('resize', checkTruncation);
 			
-			// Add click handler to expand toggle
+			// Add click handler to the inner content
+			$inner.on('click', function(e) {
+				// Don't expand if clicking on a link
+				if ($(e.target).is('a')) {
+					return;
+				}
+				$article.toggleClass('expanded');
+			});
+			
+			// Keep the toggle button click handler
 			$toggle.on('click', function(e) {
 				e.stopPropagation();
 				$article.toggleClass('expanded');
