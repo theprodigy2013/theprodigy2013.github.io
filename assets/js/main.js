@@ -156,4 +156,33 @@
 			}
 		});
 
+	// Expandable Articles
+		$('.features article').each(function() {
+			var $article = $(this);
+			var $inner = $article.find('.inner');
+			var $toggle = $article.find('.expand-toggle');
+			
+			// Check if content is truncated
+			function checkTruncation() {
+				if ($inner[0].scrollHeight > $inner.height()) {
+					$toggle.show();
+				} else {
+					$toggle.hide();
+					$article.removeClass('expanded');
+				}
+			}
+			
+			// Initial check
+			checkTruncation();
+			
+			// Re-check on window resize
+			$(window).on('resize', checkTruncation);
+			
+			// Add click handler to expand toggle
+			$toggle.on('click', function(e) {
+				e.stopPropagation();
+				$article.toggleClass('expanded');
+			});
+		});
+
 })(jQuery);
