@@ -161,6 +161,7 @@
 			var $article = $(this);
 			var $inner = $article.find('.inner');
 			var $toggle = $article.find('.expand-toggle');
+			var $expandedContent = $article.find('.expanded-content');
 			
 			// Check if content is truncated
 			function checkTruncation() {
@@ -178,19 +179,29 @@
 			// Re-check on window resize
 			$(window).on('resize', checkTruncation);
 			
-			// Add click handler to the inner content
-			$inner.on('click', function(e) {
+			// Add click handler to the entire article
+			$article.on('click', function(e) {
 				// Don't expand if clicking on a link
 				if ($(e.target).is('a')) {
 					return;
 				}
 				$article.toggleClass('expanded');
+				if ($article.hasClass('expanded')) {
+					$expandedContent.slideDown(300);
+				} else {
+					$expandedContent.slideUp(300);
+				}
 			});
 			
 			// Keep the toggle button click handler
 			$toggle.on('click', function(e) {
-				e.stopPropagation();
+				e.stopPropagation(); // Prevent the article click from firing
 				$article.toggleClass('expanded');
+				if ($article.hasClass('expanded')) {
+					$expandedContent.slideDown(300);
+				} else {
+					$expandedContent.slideUp(300);
+				}
 			});
 		});
 
