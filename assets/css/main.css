@@ -1464,6 +1464,7 @@ input, select, textarea {
 			position: relative;
 			cursor: pointer;
 			overflow: visible;
+			width: 100%;
 		}
 
 		.features article .inner {
@@ -3411,8 +3412,9 @@ input, select, textarea {
 
 	#four .features article .inner {
 		max-height: 40px;
-		padding-right: 50px; /* Increased padding to match section three button size */
-		position: relative; /* Add position relative for absolute positioning of toggle */
+		padding-right: 50px;
+		position: relative;
+		width: 80%;
 	}
 
 	#four .features article .inner:after {
