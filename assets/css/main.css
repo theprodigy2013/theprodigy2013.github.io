@@ -1464,7 +1464,6 @@ input, select, textarea {
 			position: relative;
 			cursor: pointer;
 			overflow: visible;
-			width: 100%;
 		}
 
 		.features article .inner {
