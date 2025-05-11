@@ -3438,7 +3438,7 @@ input, select, textarea {
 	}
 
 	#four .features article.expanded .inner {
-		max-height: 2000px;
+		max-height: 4000px;
 	}
 
 	#four .features article .expand-toggle {
