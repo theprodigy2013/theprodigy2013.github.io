@@ -1489,7 +1489,7 @@ input, select, textarea {
 		}
 
 		.features article.expanded .inner {
-			max-height: 2000px;
+			max-height: 4000px;
 		}
 
 		.features article.expanded .inner:after {
